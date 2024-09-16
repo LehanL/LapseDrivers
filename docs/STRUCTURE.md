@@ -1,12 +1,8 @@
 LapseDrivers/
 │
-├── data/          
+├── data/                  # Data directory (if applicable)       
 |   ├── processed/         # storage location for preprocessed base
 │   └── raw/               # Location for source data
-│
-├── data/                  # Data directory (if applicable)
-│   ├── raw/               # Raw data files
-│   └── processed/         # Processed data files
 │
 ├── DevNotebooks/          
 │   └── LapseDriver.ipynb  # Jupyter notebook for project testing
