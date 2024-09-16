@@ -64,7 +64,7 @@ The SHAP and LIME values therefore reveal if a feature is locally important for 
 ## Phase 1: Application Setup
 The image below outlines the design for the setup phase of the application.
 
-![Phase1](LapseDrivers/docs/flowdiagram/phase1.png)
+![Phase1](docs/flowdiagram/phase1.png)
 
 The Python file main.py is the script that orchestrates the project flow when executed.
 
