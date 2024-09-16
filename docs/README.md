@@ -64,7 +64,7 @@ The SHAP and LIME values therefore reveal if a feature is locally important for 
 ## Phase 1: Application Setup
 The image below outlines the design for the setup phase of the application.
 
-![Phase1](docs/flowdiagram/phase1.png)
+![Phase1](flowdiagram/phase1.png)
 
 The Python file main.py is the script that orchestrates the project flow when executed.
 
@@ -267,7 +267,7 @@ class Pipeline:
 ## Phase 2: Data Ingestion
 The image below outlines the design for the data ingestion phase of the application.
 
-![Phase2](C:/Users/User/Pictures/phase2.png?v=2)
+![Phase2](flowdiagram/phase2.png)
 
 ### Pipeline calls CSV loader
 Within the primary application pipeline, the first step is data ingestion. However, we first need to check if the application is requested to perform either training or scoring. Training and scoring are the two primary functions of the solution, and for proper completion of the project, at least one of the two needs to be requested. By default, one function is selected, but there is a possibility that the application could be run with both options set to False.
@@ -410,7 +410,7 @@ class IngestCSV:
 ## Phase 3: Data Transformation
 The image below outlines the design for the data transformation phase of the application.
 
-![Phase3](C:/Users/User/Pictures/phase3.png)
+![Phase3](flowdiagram/phase3.png)
 
 After the CSV data sources have been loaded, they require transformation and cleaning before being applied to the machine learning training pipeline. Data preprocessing is essential for reducing the presence of erroneous data that could mislead the training algorithm, and for minimising noise, which helps reduce the chance of overfitting. Finally, scaling is employed to prevent the model from overweighting numeric features with extreme values.
 
@@ -798,7 +798,7 @@ Note, the model choice is less susceptible than algorithms such as linear regres
 ## Phase 4: Modelling ETL
 The image below outlines the design for the modelling extract, transform, load (ETL) phase of the application.
 
-![Phase4](C:/Users/User/Pictures/phase4.png?v=2)
+![Phase4](flowdiagram/phase4.png)
 
 The behaviour of the modelling ETL is dependent on the arguments provided to the application at execution. First the primary pipeline checks to see if the processed data frame needs to be saved. Next it checks if scoring is going to take place. Both checks invokes a function if passed. The first step is included to ensure replication. Note, no functionality is currently included to load the data. A future addition can be the addition of another argument to check if data will be loaded, a check can then be added to skip the entire preprocessing step if true, loading the data instead. 
 
@@ -896,7 +896,7 @@ Before model training can begin, the processed dataset needs to be split into a 
 ## Phase 5: Model Pipeline
 The image below outlines the design for the model pipeline.
 
-![Phase5](C:/Users/User/Pictures/phase5.png?v=2)
+![Phase5](flowdiagram/phase5.png)
 
 The model pipeline behaves differently depending on the command-line arguments provided at execution. The HistGBMPipeline class is invoked regardless of whether training, scoring, or both are requested. The HistGBMPipeline class focuses on training a Histogram Gradient Boosting Machine (HistGBM) model and using it for scoring. Once initialised, the training function is called if training is requested. If both training and validation are requested, validation is subsequently performed. Finally, the optimised model is saved to a path specified in config.py using Pickle. The following subsections will explore the model's optimisation, training, and validation processes, explaining the underlying logic.
 
@@ -1248,7 +1248,7 @@ Finally the trained model is stored in the provided path.
 ## Phase 6: Scoring
 The image below outlines the design for the scoring phase of the application.
 
-![Phase6](C:/Users/User/Pictures/phase6.png?v=2)
+![Phase6](flowdiagram/phase6.png)
 
 If scoring is requested the FeatureImportanceAnalyser class is initialised. The class receives the loaded model, the training set, the testing set, the scoring set, as well as the predicted target. Once initialised multiple feature importance functions can be called. As was the case for data preprocessing, the developer is enabled to alter the functions called. The final export function compiles the generated feature importance scores and produces a .csv file for reporting purposes. The code snippets below will explore the individual functions and explain the insight each will provide. 
 ```python:
