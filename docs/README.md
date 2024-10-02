@@ -1,4 +1,4 @@
-# README for the Technical Challenge: Lapse Drivers for Retention Campaigns
+# README: Lapse Drivers for Retention Campaigns
 
 Author: Lehan L. Lötter
 
