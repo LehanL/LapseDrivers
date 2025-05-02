@@ -2,8 +2,6 @@
 
 Author: Lehan L. Lötter
 
-ID: 9404225043087
-
 Date: 16/09/2024
 
 ## Introduction
